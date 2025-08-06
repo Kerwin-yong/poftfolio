@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>交易分润系统产品内容</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="./assets/css/index.css" />
+    <style>
+        /* Products Section */
+        .product-container {
+            margin-top: 3rem;
+        }
+
+        .products {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: #333;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, #ff8c42, #ff6b35);
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .product-card {
+            background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+            border-radius: 20px;
+            padding: 40px 35px;
+            box-shadow: 0 20px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(102, 126, 234, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #ff8c42, #ff6b35);
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-icon {
+            width: 80px;
+            height: 80px;
+
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .product-icon img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        .product-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .product-subtitle {
+            color: #ff6b35;
+            margin-bottom: 25px;
+            font-size: 1.15rem;
+            font-weight: 600;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .feature-list li {
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            color: #555;
+        }
+
+        .feature-list li strong {
+            font-weight: 600;
+            color: #111;
+            font-size: 15px;
+        }
+
+
+        .feature-list li::before {
+            content: "✅";
+            margin-right: 10px;
+            font-size: 1.1rem;
+        }
+
+        /* Highlight Features */
+        .highlight-section {
+            background: linear-gradient(135deg, #ff8c42, #ff6b35);
+            color: white;
+            padding: 60px 0;
+            margin: 60px 0;
+        }
+
+        .highlight-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+        }
+
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .highlight-item {
+            text-align: center;
+            padding: 30px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .highlight-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .highlight-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .highlight-icon img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+        }
+
+        .highlight-number {
+            font-size: 2.8rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .highlight-label {
+            font-size: 1.5rem;
+            opacity: 0.9;
+        }
+
+        /* Process Section */
+        .process {
+            background: #f8f9fa;
+            padding: 80px 0;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .step-card {
+            text-align: center;
+            padding: 40px 30px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+        }
+
+        .step-number {
+            width: 65px;
+            height: 65px;
+            background: linear-gradient(135deg, #ff8c42, #ff6b35);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 0 auto 20px;
+        }
+
+        .step-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .step-description {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Detail Section */
+        .detail-section {
+            background: white;
+            padding: 80px 0;
+        }
+
+        .detail-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+            align-items: start;
+        }
+
+        .detail-text {
+            padding: 20px 0;
+        }
+
+        .detail-title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .detail-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .detail-list li {
+            padding: 10px 0;
+            color: #555;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+
+        .detail-list li::before {
+            content: "🔸";
+            margin-right: 15px;
+            font-size: 1.2rem;
+            color: #ff6b35;
+        }
+
+        .detail-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .highlight-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .highlight-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header id="header">
+        <nav class="container">
+            <div class="logo">
+                <a href="#home">
+                    <img src="./assets/images/fx-logo.png" alt="FX8">
+                </a>
+            </div>
+            <div class="nav-right">
+                <ul class="nav-links" id="navLinks">
+                     <li><a href="./index-KR.html#home">홈</a></li>
+                    <li><a href="./index-KR.html#about">회사 소개</a></li>
+                    <li><a href="./index-KR.html#vision">수익 창출 방법</a></li>
+                    <li><a href="./product-KR.html">제품 안내</a></li>
+                    <li><a href="#contact">문의하기</a></li>
+                    <li><a href="./qualifi-KR.html">회사 자격</a></li>
+                    <li><a href="./news-KR.html">뉴스</a></li>
+                    <li class="language-dropdown">
+                        <button class="dropdown-btn" id="languageBtn">
+                            <i class="fas fa-globe"></i> 한국어
+                        </button>
+                        <div class="dropdown-content" id="languageDropdown">
+                           <a href="index-EN.html" onclick="changeLanguage('English')">English</a>
+                            <a href="index-MY.html" onclick="changeLanguage('Bahasa Malaysia')">Bahasa Malaysia</a>
+                            <a href="index-CN.html" onclick="changeLanguage('中文')">중국어 (간체)</a>
+                            <a href="index-TW.html" onclick="changeLanguage('中文')">중국어 (번체)</a>
+                            <a href="index-JP.html" onclick="changeLanguage('日语')">일본어</a>
+                            <a href="index-KR.html" onclick="changeLanguage('韩语')">한국어</a>
+                        </div>
+                    </li>
+                </ul>
+               <a id="download-btn" href="https://www.baidu.com/" target="_blank" rel="noopener noreferrer"
+                    class="download-btn fade-element">
+                    FX8 앱 다운로드
+                </a>
+            </div>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Products Section -->
+    <section class="product-container fade-element">
+        <section class="products fade-element" id="products">
+            <div class="container">
+                <h2 class="section-title fade-element">핵심 제품 3종</h2>
+
+                <div class="product-grid">
+                    <div class="product-card fade-element">
+                        <div class="product-icon fade-element">
+                            <img src="./assets/images/product-i1.png" alt="모의 수익 분배" />
+                        </div>
+                        <h3 class="product-title fade-element">모의 계약 거래 수익 분배</h3>
+                        <p class="product-subtitle">무위험, 고수익</p>
+                        <ul class="feature-list">
+                            <li>비용 없음: 실제 자금 없이 거래 체험 및 수익 분배 획득</li>
+                            <li>초보자 친화적: 학습 장벽을 낮추고 쉽게 시작 가능</li>
+                            <li>커뮤니티 확장: 다단계 추천 보상으로 수동 소득 창출</li>
+                        </ul>
+                    </div>
+
+                    <div class="product-card fade-element">
+                        <div class="product-icon fade-element">
+                            <img src="./assets/images/product-i2.png" alt="거래 수수료 분배" />
+                        </div>
+                        <h3 class="product-title fade-element">계약 거래 수수료 분배</h3>
+                        <p class="product-subtitle">거래할수록 더 많은 수익</p>
+                        <ul class="feature-list">
+                            <li>업계 최고 수준: 추천인은 최대 40% 수수료 리베이트 획득 가능</li>
+                            <li>즉시 정산: 각 거래 완료 시 T+0으로 수익 반영</li>
+                            <li>계층형 대리점 모델: 팀이 커질수록 수익도 증가</li>
+                            <li>전용 대시보드: 투명한 데이터로 수익 확인 가능</li>
+                        </ul>
+                    </div>
+
+                    <div class="product-card fade-element">
+                        <div class="product-icon fade-element">
+                            <img src="./assets/images/product-i3.png" alt="카피 트레이딩 수익" />
+                        </div>
+                        <h3 class="product-title fade-element">카피 트레이딩 수익 분배</h3>
+                        <p class="product-subtitle">전문가가 거래, 당신은 수익</p>
+                        <ul class="feature-list">
+                            <li>원클릭 복사: 초보자도 전문가 전략을 쉽게 따라 하기</li>
+                            <li>이중 수익: 전략 제공자와 추천인 모두 수익 공유</li>
+                            <li>스마트 리스크 관리: 손절/익절 및 포지션 관리 기능 탑재</li>
+                            <li>검증된 전략: 선정된 트레이더와 실시간 공개 수익률</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <!-- Highlight Section -->
+    <section class="highlight-section">
+        <div class="container fade-element">
+            <h2 class="highlight-title fade-element">핵심 경쟁력 지표</h2>
+            <div class="highlight-grid">
+                <div class="highlight-item">
+                    <span class="highlight-icon fade-element">
+                        <img src="./assets/images/trophy.png" alt="트로피" />
+                    </span>
+                    <span class="highlight-number">40%</span>
+                    <div class="highlight-label">최고 리베이트 비율</div>
+                </div>
+                <div class="highlight-item">
+                    <span class="highlight-icon fade-element">
+                        <img src="./assets/images/flash-coin.png" alt="즉시 정산" />
+                    </span>
+                    <span class="highlight-number">T+0</span>
+                    <div class="highlight-label">즉시 정산</div>
+                </div>
+                <div class="highlight-item">
+                    <span class="highlight-icon fade-element">
+                        <img src="./assets/images/global.png" alt="글로벌" />
+                    </span>
+                    <span class="highlight-number">24/7</span>
+                    <div class="highlight-label">연중무휴 거래</div>
+                </div>
+                <div class="highlight-item">
+                    <span class="highlight-icon">
+                        <img src="./assets/images/shield.png" alt="보안" />
+                    </span>
+                    <span class="highlight-number">0</span>
+                    <div class="highlight-label">무위험 체험</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process">
+        <div class="container fade-element">
+            <h2 class="section-title fade-element">운영 프로세스</h2>
+            <div class="process-steps">
+                <div class="step-card">
+                    <div class="step-number fade-element">1</div>
+                    <h3 class="step-title">회원 가입</h3>
+                    <p class="step-description">추천 링크를 통해 가입하고, 모의 또는 실거래 모드 선택 후 시작</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number fade-element">2</div>
+                    <h3 class="step-title">거래 수수료 발생</h3>
+                    <p class="step-description">USDT 또는 코인 계약 거래 시 수수료 자동 발생</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number fade-element">3</div>
+                    <h3 class="step-title">다단계 수익 분배</h3>
+                    <p class="step-description">추천인, 에이전트, 커뮤니티 리더에게 설정된 비율로 자동 분배</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number fade-element">4</div>
+                    <h3 class="step-title">실시간 정산</h3>
+                    <p class="step-description">T+0 방식으로 수익이 즉시 정산되며, 전용 대시보드에서 투명하게 확인 가능</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- 푸터 -->
+    <footer class="footer-container">
+        <div class="footer-top fade-element">
+            <div class="footer-logo fade-element">
+                <img src="./assets/images/fx-logo.png" alt="FX8 로고">
+            </div>
+            <div class="footer-socials">
+                <!-- 첫 번째 줄: Telegram과 WhatsApp -->
+                <h3 class="footer-contact">문의하기</h3>
+                <div class="footer-social-row">
+                    <a href="#" class="footer-social-link">
+                        <img src="./assets/images/telegram.png" alt="Telegram">
+                        Telegram
+                    </a>
+                    <a href="#" class="footer-social-link">
+                        <img src="./assets/images/whatsapp.png" alt="WhatsApp">
+                        WhatsApp
+                    </a>
+                </div>
+
+                <!-- 두 번째 줄: 추가 SNS 아이콘 -->
+                <div class="footer-social-row" id="contact">
+                    <a href="#" class="footer-social-link">
+                        <img src="./assets/images/facebook.png" alt="Facebook" class="social-icon">
+                    </a>
+                    <a href="#" class="footer-social-link">
+                        <img src="./assets/images/instagram.png" alt="Instagram" class="social-icon">
+                    </a>
+                    <a href="#" class="footer-social-link">
+                        <img src="./assets/images/linkedin.png" alt="LinkedIn" class="social-icon">
+                    </a>
+                    <a href="#" class="footer-social-link">
+                        <img src="./assets/images/ytb.png" alt="YouTube" class="social-icon">
+                    </a>
+                    <a href="#" class="footer-social-link">
+                        <img src="./assets/images/wechat.png" alt="WeChat" class="social-icon">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <hr class="footer-divider">
+
+        <div class="footer-text">
+            FX8 디지털 자산 거래소 — 디지털 금융 생태계를 새롭게 정의합니다.
+            FX8은 MetaQuotes를 중심으로 혁신을 원동력 삼아, 다양한 역할이 공존하고 상생하는 글로벌 선도 디지털 자산 플랫폼 구축을 목표로 하고 있습니다.
+            자체 개발한 A북 모의 수익분배, B북 계약 수익분배, 카피트레이딩 수익분배 3대 구조를 통해 단순한 거래 서비스를 넘어, 개방적이고 투명하며 지속 가능한 금융 생태계를 조성합니다.
+            트레이더, 전략 개발자, 커뮤니티 리더, 파트너 등 모든 참여자가 디지털 경제 성장의 혜택을 함께 누릴 수 있도록 설계되었습니다.
+            기술이 미래를 이끌고, 수익 분배가 상생을 실현합니다. FX8은 단순한 거래소를 넘어 디지털 자산 생태계의 핵심 인프라로서, 업계를 보다 효율적이고 공정하며 역동적인 시대로 이끌어 갑니다.
+            <br><br>
+            © 2025 FX8.com. 모든 권리 보유.
+        </div>
+
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="./assets/js/index.js"></script>
+    <script>
+        // 数字动画
+        function animateNumbers() {
+            const numbers = document.querySelectorAll('.highlight-number');
+            numbers.forEach(num => {
+                const text = num.textContent;
+                if (text === '40%') {
+                    let current = 0;
+                    const timer = setInterval(() => {
+                        current += 1;
+                        num.textContent = current + '%';
+                        if (current >= 40) {
+                            clearInterval(timer);
+                        }
+                    }, 30);
+                }
+            });
+        }
+
+        // 当高亮区域进入视口时开始数字动画
+        const highlightObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateNumbers();
+                    highlightObserver.unobserve(entry.target);
+                }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const highlightSection = document.querySelector('.highlight-section');
+            if (highlightSection) {
+                highlightObserver.observe(highlightSection);
+            }
+        });
+    </script>
+</body>
+
+</html>

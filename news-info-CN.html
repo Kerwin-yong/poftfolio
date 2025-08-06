@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>外汇牌照申请信息</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="./assets/css/index.css" />
+    <style>
+        .new-info-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 100px 20px;
+              font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Microsoft YaHei', sans-serif;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        .new-info-section {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+            margin-bottom: 40px;
+            overflow: hidden;
+        }
+
+        .new-info-header {
+            background:linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            color: white;
+            padding: 25px 30px;
+            font-size: 24px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        /* .new-info-number {
+            background: rgba(255, 255, 255, 0.2);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: bold;
+        } */
+
+        .new-info-content {
+            padding: 30px;
+        }
+
+        .new-info-text {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 30px;
+            text-align: justify;
+            text-indent: 2em;
+        }
+
+        .new-info-image {
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            margin-bottom: 20px;
+        }
+
+        .new-info-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .new-info-section:hover .new-info-image img {
+            transform: scale(1.02);
+        }
+
+        .new-info-highlight {
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .new-info-quote {
+            background: linear-gradient(135deg, #f8f9ff 0%, #e8eaff 100%);
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            color: #444;
+        }
+
+        @media (max-width: 768px) {
+            .new-info-container {
+                padding: 80px 15px;
+            }
+
+            .new-info-header {
+                padding: 20px;
+                font-size: 20px;
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+
+            .new-info-content {
+                padding: 20px;
+            }
+
+            .new-info-text {
+                font-size: 15px;
+            }
+
+            .new-info-image img {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header id="header">
+        <nav class="container">
+            <div class="logo">
+                <a href="#home">
+                    <img src="./assets/images/fx-logo.png" alt="FX8">
+                </a>
+            </div>
+            <div class="nav-right">
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="./index-CN.html#home">首页</a></li>
+                    <li><a href="./index-CN.html#about">关于我们</a></li>
+                    <li><a href="./index-CN.html#vision">如何赚钱</a></li>
+                    <li><a href="./product-CN.html">产品介绍</a></li>
+                    <li><a href="#contact">联系我们</a></li>
+                    <li><a href="./qualifi-CN.html">公司资质</a></li>
+                    <li><a href="./news-CN.html">新闻资讯</a></li>
+                    <li class="language-dropdown">
+                        <button class="dropdown-btn" id="languageBtn">
+                            <i class="fas fa-globe"></i> 中文简体
+                        </button>
+                        <div class="dropdown-content" id="languageDropdown">
+                            <a href="index-EN.html" onclick="changeLanguage('English')">English</a>
+                            <a href="index-MY.html" onclick="changeLanguage('Bahasa Malaysia')">Bahasa Malaysia</a>
+                            <a href="index-CN.html" onclick="changeLanguage('中文')">中文（简体）</a>
+                            <a href="index-TW.html" onclick="changeLanguage('中文')">中文（繁体）</a>
+                            <a href="index-JP.html" onclick="changeLanguage('日语')">日语</a>
+                            <a href="index-KR.html" onclick="changeLanguage('韩语')">韩语</a>
+                        </div>
+                    </li>
+                </ul>
+                <a id="download-btn" href="https://www.baidu.com/" target="_blank" rel="noopener noreferrer"
+                    class="download-btn fade-element">
+                    下载 FX8 APP
+                </a>
+            </div>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <div class="new-info-container">
+        <!-- 第一部分：外汇公司创始人分享 -->
+        <div class="new-info-section">
+            <div class="new-info-header">
+                <!-- <div class="new-info-number">一</div> -->
+                <span>外汇公司创始人分享：外汇牌照申请的前沿趋势及经验大揭秘！</span>
+            </div>
+            <div class="new-info-content">
+                <p class="new-info-text">
+                    什么是外汇牌照申请？外汇牌照申请是指一个公司或个人通过一系列程序和规定，向相关机构申请获得从事外汇业务的合法资质。在全球金融市场日益开放的今天，外汇交易已成为国际贸易和投资的重要组成部分，而获得合规的外汇牌照则是每个想要进入这一领域的企业必须迈过的门槛。
+                </p>
+                
+                <div class="new-info-image">
+                    <img src="./assets/images/forex-i.jpg" alt="外汇交易数据分析">
+                </div>
+
+                <p class="new-info-text">
+                    作为一名外汇公司的创始人，我深知外汇牌照申请过程中的复杂性和挑战性。从最初的市场调研到最终获得监管批准，整个过程不仅需要充足的资金准备，更需要对当地法律法规的深入理解。<span class="new-info-highlight">选择合适的司法管辖区、准备完整的申请材料、建立完善的风控体系</span>，这些都是成功获得外汇牌照的关键要素。
+                </p>
+
+                <div class="new-info-quote">
+                    在我的经验中，最重要的是要有耐心和专业的团队支持。外汇牌照申请不是一蹴而就的过程，需要与监管机构保持良好的沟通，及时响应他们的要求和建议。
+                </div>
+
+                <p class="new-info-text">
+                    当前外汇牌照申请的趋势正在发生变化，监管要求越来越严格，合规成本也在不断上升。但同时，随着金融科技的发展，数字化申请流程和在线监管报告系统也为申请者提供了更多便利。对于有意进入外汇市场的企业来说，提前做好充分准备，选择经验丰富的专业团队协助申请，将大大提高成功率。
+                </p>
+            </div>
+        </div>
+
+        <!-- 第二部分：法律风险解析 -->
+        <div class="new-info-section">
+            <div class="new-info-header">
+                <!-- <div class="new-info-number">二</div> -->
+                <span>全面解析外汇牌照申请中需要注意的法律风险！</span>
+            </div>
+            <div class="new-info-content">
+                <p class="new-info-text">
+                    外汇牌照申请中需要注意的法律风险随着全球经济的发展和国际贸易的增加，外汇交易市场的重要性日益凸显。然而，在申请外汇牌照的过程中，企业面临着诸多法律风险，这些风险如果处理不当，不仅会导致申请失败，还可能面临严重的法律后果。
+                </p>
+
+                <div class="new-info-quote">
+                    合规风险是外汇牌照申请中最主要的法律风险之一。各国对外汇业务都有严格的监管要求，包括资本充足率、客户身份识别、反洗钱措施等方面的规定。
+                </div>
+
+                <p class="new-info-text">
+                    首先是<span class="new-info-highlight">监管合规风险</span>。不同司法管辖区的监管要求存在显著差异，申请者必须确保完全了解并遵守当地的所有相关法律法规。包括但不限于：最低资本要求、股东背景调查、管理层资质认证、业务范围限制、客户资金隔离要求等。任何一个环节的疏忽都可能导致申请被拒绝或后续的监管处罚。
+                </p>
+
+                <div class="new-info-image">
+                    <img src="./assets/images/forex-i2.jpg" alt="法律文件和天平">
+                </div>
+
+                <p class="new-info-text">
+                    其次是运营合规风险。获得牌照只是第一步，后续的业务运营中必须持续满足监管要求。这包括定期向监管机构提交财务报告、客户投诉处理、系统安全维护、员工培训等。<span class="new-info-highlight">建立完善的内部合规体系和风险管理机制</span>，是确保长期合规经营的关键。同时，还要密切关注监管政策的变化，及时调整业务策略以适应新的监管要求。
+                </p>
+
+                <p class="new-info-text">
+                    最后，跨境业务的法律风险也不容忽视。外汇业务往往涉及多个司法管辖区，需要同时满足各地的法律要求。税务筹划、数据保护、客户权益保障等方面都需要专业的法律支持。建议企业在申请外汇牌照前，聘请专业的法律顾问团队，进行全面的风险评估和合规规划。
+                </p>
+            </div>
+        </div>
+    </div>
+     <!-- Footer -->
+    <footer class="footer-container">
+        <div class="footer-top fade-element">
+            <div class="footer-logo fade-element">
+                <img src="./assets/images/fx-logo.png" alt="FX8 Logo">
+            </div>
+            <div class="footer-socials">
+                <!-- 第一排：原有的 Telegram 和 WhatsApp -->
+                <h3 class="footer-contact">联系我们</h3>
+                <div class="footer-social-row">
+                    <a href="#" class="footer-social-link">
+                        <img src="./assets/images/telegram.png" alt="Telegram">
+                        Telegram
+                    </a>
+                    <a href="#" class="footer-social-link">
+                        <img src="./assets/images/whatsapp.png" alt="WhatsApp">
+                        WhatsApp
+                    </a>
+                </div>
+
+                <!-- 第二排：新增的社交媒体按钮 -->
+                <div class="footer-social-row" id="contact">
+                    <a href="#" class="footer-social-link">
+                        <img src="./assets/images/facebook.png" alt="Facebook" class="social-icon">
+                    </a>
+                    <a href="#" class="footer-social-link">
+                        <img src="./assets/images/instagram.png" alt="Instagram" class="social-icon">
+                    </a>
+                    <a href="#" class="footer-social-link">
+                        <img src="./assets/images/linkedin.png" alt="WhatsApp" class="social-icon">
+                    </a>
+                    <a href="#" class="footer-social-link">
+                        <img src="./assets/images/ytb.png" alt="LinkedIn" class="social-icon">
+                    </a>
+                    <a href="#" class="footer-social-link">
+                        <img src="./assets/images/wechat.png" alt="LinkedIn" class="social-icon">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <hr class="footer-divider">
+
+        <div class="footer-text">
+            FX8 数字货币交易所 —— 重新定义数字资产交易生态 以 MetaQuotes 为核心，以创新为驱动，fx8 致力于构建全球领先的多角色共赢型数字资产平台。
+            通过独创的 A 盘模拟分润、B 盘合约分润、跟单分润三大体系，我们不仅提供交易服务，更打造一个
+            开放、透明、可持续增长的金融生态，让每一位参与者——交易者、策略开发者、社区领袖、合作伙伴——都能共享数字经济的增长红利。
+            技术驱动未来，分润成就共赢。fx8 不仅是交易平台，更是数字资产生态的基础设施，
+            推动行业迈向更高效、更公平、更具活力的新纪元。
+            <br><br>
+            © 2025 FX8.com. All rights reserved.
+        </div>
+    </footer>
+
+        <!-- JavaScript -->
+    <script src="./assets/js/index.js"></script>
+</body>
+</html>

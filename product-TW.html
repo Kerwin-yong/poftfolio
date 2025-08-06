@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>交易分润系统产品内容</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="./assets/css/index.css" />
+    <style>
+        /* Products Section */
+        .product-container {
+            margin-top: 3rem;
+        }
+
+        .products {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: #333;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, #ff8c42, #ff6b35);
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .product-card {
+            background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+            border-radius: 20px;
+            padding: 40px 35px;
+            box-shadow: 0 20px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(102, 126, 234, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #ff8c42, #ff6b35);
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-icon {
+            width: 80px;
+            height: 80px;
+
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .product-icon img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        .product-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .product-subtitle {
+            color: #ff6b35;
+            margin-bottom: 25px;
+            font-size: 1.15rem;
+            font-weight: 600;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .feature-list li {
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            color: #555;
+        }
+
+        .feature-list li strong {
+            font-weight: 600;
+            color: #111;
+            font-size: 15px;
+        }
+
+
+        .feature-list li::before {
+            content: "✅";
+            margin-right: 10px;
+            font-size: 1.1rem;
+        }
+
+        /* Highlight Features */
+        .highlight-section {
+            background: linear-gradient(135deg, #ff8c42, #ff6b35);
+            color: white;
+            padding: 60px 0;
+            margin: 60px 0;
+        }
+
+        .highlight-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+        }
+
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .highlight-item {
+            text-align: center;
+            padding: 30px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .highlight-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .highlight-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .highlight-icon img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+        }
+
+        .highlight-number {
+            font-size: 2.8rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .highlight-label {
+            font-size: 1.5rem;
+            opacity: 0.9;
+        }
+
+        /* Process Section */
+        .process {
+            background: #f8f9fa;
+            padding: 80px 0;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .step-card {
+            text-align: center;
+            padding: 40px 30px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+        }
+
+        .step-number {
+            width: 65px;
+            height: 65px;
+            background: linear-gradient(135deg, #ff8c42, #ff6b35);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 0 auto 20px;
+        }
+
+        .step-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .step-description {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Detail Section */
+        .detail-section {
+            background: white;
+            padding: 80px 0;
+        }
+
+        .detail-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+            align-items: start;
+        }
+
+        .detail-text {
+            padding: 20px 0;
+        }
+
+        .detail-title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .detail-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .detail-list li {
+            padding: 10px 0;
+            color: #555;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+
+        .detail-list li::before {
+            content: "🔸";
+            margin-right: 15px;
+            font-size: 1.2rem;
+            color: #ff6b35;
+        }
+
+        .detail-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .highlight-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .highlight-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header id="header">
+        <nav class="container">
+            <div class="logo">
+                <a href="#home">
+                    <img src="./assets/images/fx-logo.png" alt="FX8">
+                </a>
+            </div>
+            <div class="nav-right">
+                <ul class="nav-links" id="navLinks">
+                     <li><a href="./index-TW.html#home">首頁</a></li>
+                    <li><a href="./index-TW.html#about">關於我們</a></li>
+                    <li><a href="./index-TW.html#vision">如何賺錢</a></li>
+                    <li><a href="./product-TW.html">產品介紹</a></li>
+                    <li><a href="#contact">聯絡我們</a></li>
+                    <li><a href="./qualifi-TW.html">公司資質</a></li>
+                    <li><a href="./news-TW.html">新聞資訊</a></li>
+                    <li class="language-dropdown">
+                        <button class="dropdown-btn" id="languageBtn">
+                            <i class="fas fa-globe"></i> 中文简体
+                        </button>
+                        <div class="dropdown-content" id="languageDropdown">
+                             <a href="index-EN.html" onclick="changeLanguage('English')">English</a>
+                            <a href="index-MY.html" onclick="changeLanguage('Bahasa Malaysia')">Bahasa Malaysia</a>
+                            <a href="index-CN.html" onclick="changeLanguage('中文')">中文（簡體）</a>
+                            <a href="index-TW.html" onclick="changeLanguage('中文')">中文（繁體）</a>
+                            <a href="index-JP.html" onclick="changeLanguage('日語')">日語</a>
+                            <a href="index-KR.html" onclick="changeLanguage('韓語')">韓語</a>
+                        </div>
+                    </li>
+                </ul>
+                  <a id="download-btn" href="https://www.baidu.com/" target="_blank" rel="noopener noreferrer"
+                    class="download-btn fade-element">
+                    下載 FX8 APP
+                </a>
+            </div>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- 產品區塊 -->
+    <section class="product-container fade-element">
+        <section class="products fade-element" id="products">
+            <div class="container">
+                <h2 class="section-title fade-element">三大主力產品</h2>
+
+                <div class="product-grid">
+                    <div class="product-card fade-element">
+                        <div class="product-icon fade-element">
+                            <img src="./assets/images/product-i1.png" alt="模擬收益分潤" />
+                        </div>
+                        <h3 class="product-title fade-element">模擬合約交易收益分潤</h3>
+                        <p class="product-subtitle">零風險，高回報</p>
+                        <ul class="feature-list">
+                            <li>無需成本：無需實際資金即可體驗交易並獲得收益分潤</li>
+                            <li>新手首選：降低學習門檻，立即上手</li>
+                            <li>拓展社群：多層級推薦獎勵機制，建立被動收入</li>
+                        </ul>
+                    </div>
+
+                    <div class="product-card fade-element">
+                        <div class="product-icon fade-element">
+                            <img src="./assets/images/product-i2.png" alt="合約手續費" />
+                        </div>
+                        <h3 class="product-title fade-element">合約交易手續費分潤</h3>
+                        <p class="product-subtitle">交易越多，收益越高</p>
+                        <ul class="feature-list">
+                            <li>業界最高返傭：推薦人可享高達 40% 的手續費返傭</li>
+                            <li>即時結算：每筆交易均採用 T+0 結算制度</li>
+                            <li>代理層級制度：團隊越大，收益越豐厚</li>
+                            <li>專屬儀表板：透明資料，收益狀況一目瞭然</li>
+                        </ul>
+                    </div>
+
+                    <div class="product-card fade-element">
+                        <div class="product-icon fade-element">
+                            <img src="./assets/images/product-i3.png" alt="跟單交易" />
+                        </div>
+                        <h3 class="product-title fade-element">跟單交易收益分潤</h3>
+                        <p class="product-subtitle">交給專家，輕鬆獲利</p>
+                        <ul class="feature-list">
+                            <li>一鍵跟單：新手也能輕鬆複製專業交易策略</li>
+                            <li>雙重收益：策略提供者與推薦人共享利潤</li>
+                            <li>智慧風控：具備止損、止盈與倉位管理功能</li>
+                            <li>專業策略：嚴選交易員，公開交易紀錄</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <!-- 優勢數據區塊 -->
+    <section class="highlight-section">
+        <div class="container fade-element">
+            <h2 class="highlight-title fade-element">主要優勢數據</h2>
+            <div class="highlight-grid">
+                <div class="highlight-item">
+                    <span class="highlight-icon fade-element">
+                        <img src="./assets/images/trophy.png" alt="獎盃" />
+                    </span>
+                    <span class="highlight-number">40%</span>
+                    <div class="highlight-label">最高返傭比例</div>
+                </div>
+                <div class="highlight-item">
+                    <span class="highlight-icon fade-element">
+                        <img src="./assets/images/flash-coin.png" alt="即時" />
+                    </span>
+                    <span class="highlight-number">T+0</span>
+                    <div class="highlight-label">即時結算制度</div>
+                </div>
+                <div class="highlight-item">
+                    <span class="highlight-icon fade-element">
+                        <img src="./assets/images/global.png" alt="全球" />
+                    </span>
+                    <span class="highlight-number">24/7</span>
+                    <div class="highlight-label">全年無休交易</div>
+                </div>
+                <div class="highlight-item">
+                    <span class="highlight-icon">
+                        <img src="./assets/images/shield.png" alt="防護盾" />
+                    </span>
+                    <span class="highlight-number">0</span>
+                    <div class="highlight-label">零風險體驗</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 流程區塊 -->
+    <section class="process">
+        <div class="container fade-element">
+            <h2 class="section-title fade-element">運作流程</h2>
+            <div class="process-steps">
+                <div class="step-card">
+                    <div class="step-number fade-element">1</div>
+                    <h3 class="step-title">用戶註冊</h3>
+                    <p class="step-description">透過推薦連結註冊，選擇模擬或實盤模式開始交易</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number fade-element">2</div>
+                    <h3 class="step-title">產生交易手續費</h3>
+                    <p class="step-description">每筆 USDT 或幣本位合約交易自動產生對應手續費</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number fade-element">3</div>
+                    <h3 class="step-title">多層收益分潤</h3>
+                    <p class="step-description">推薦人、代理與社群領袖按比例自動獲取利潤</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number fade-element">4</div>
+                    <h3 class="step-title">實時結算</h3>
+                    <p class="step-description">採用 T+0 制度，獎勵即時發放，並可在儀表板上透明查詢</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- 頁尾 -->
+    <footer class="footer-container">
+        <div class="footer-top fade-element">
+            <div class="footer-logo fade-element">
+                <img src="./assets/images/fx-logo.png" alt="FX8 標誌">
+            </div>
+            <div class="footer-socials">
+                <!-- 第一排：Telegram 和 WhatsApp -->
+                <h3 class="footer-contact">聯絡我們</h3>
+                <div class="footer-social-row">
+                    <a href="#" class="footer-social-link">
+                        <img src="./assets/images/telegram.png" alt="Telegram">
+                        Telegram
+                    </a>
+                    <a href="#" class="footer-social-link">
+                        <img src="./assets/images/whatsapp.png" alt="WhatsApp">
+                        WhatsApp
+                    </a>
+                </div>
+
+                <!-- 第二排：社群媒體圖示 -->
+                <div class="footer-social-row" id="contact">
+                    <a href="#" class="footer-social-link">
+                        <img src="./assets/images/facebook.png" alt="Facebook" class="social-icon">
+                    </a>
+                    <a href="#" class="footer-social-link">
+                        <img src="./assets/images/instagram.png" alt="Instagram" class="social-icon">
+                    </a>
+                    <a href="#" class="footer-social-link">
+                        <img src="./assets/images/linkedin.png" alt="LinkedIn" class="social-icon">
+                    </a>
+                    <a href="#" class="footer-social-link">
+                        <img src="./assets/images/ytb.png" alt="YouTube" class="social-icon">
+                    </a>
+                    <a href="#" class="footer-social-link">
+                        <img src="./assets/images/wechat.png" alt="WeChat" class="social-icon">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <hr class="footer-divider">
+
+        <div class="footer-text">
+            FX8 數位貨幣交易所 — 重新定義數位資產交易生態。
+            FX8 以 MetaQuotes 為核心，並以創新為驅動，致力打造全球領先的多方共贏型數位資產平台。
+            通過自主研發的 A 盤模擬分潤、B 盤合約分潤及跟單分潤三大體系，我們不僅提供交易服務，更構建一個開放、透明、可持續成長的金融生態系統。
+            讓每一位參與者——交易者、策略開發者、社群領袖與合作夥伴——皆可共享數位經濟的成長紅利。
+            技術驅動未來，分潤實現共贏。FX8 不僅是交易平台，更是數位資產生態的基礎設施，推動行業邁向更高效、公平且充滿活力的新紀元。
+            <br><br>
+            © 2025 FX8.com. 版權所有。
+        </div>
+
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="./assets/js/index.js"></script>
+    <script>
+        // 数字动画
+        function animateNumbers() {
+            const numbers = document.querySelectorAll('.highlight-number');
+            numbers.forEach(num => {
+                const text = num.textContent;
+                if (text === '40%') {
+                    let current = 0;
+                    const timer = setInterval(() => {
+                        current += 1;
+                        num.textContent = current + '%';
+                        if (current >= 40) {
+                            clearInterval(timer);
+                        }
+                    }, 30);
+                }
+            });
+        }
+
+        // 当高亮区域进入视口时开始数字动画
+        const highlightObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateNumbers();
+                    highlightObserver.unobserve(entry.target);
+                }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const highlightSection = document.querySelector('.highlight-section');
+            if (highlightSection) {
+                highlightObserver.observe(highlightSection);
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ms">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Permohonan Lesen Forex</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="./assets/css/index.css" />
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #f4f6f9;
+            color: #2c3e50;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .article-list {
+            max-width: 1300px;
+            margin: 8rem auto;
+            padding: 0 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+
+        .article-content {
+            display: flex;
+            align-items: center;
+            background-color: #ffffff;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+            gap: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .arrow-link {
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .article-content:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+        }
+
+        .article-img-box {
+            position: relative;
+            width: 320px;
+            height: 200px;
+            border-radius: 12px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .article-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.89;
+        }
+
+        .overlay-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(149, 17, 226, 0.678);
+            padding: 0.5rem 8rem;
+            border-radius: 6px;
+            font-size: 0.86rem;
+            color: #fff;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .overlay-text2 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(231, 137, 15, 0.774);
+            padding: 0.5rem 8rem;
+            border-radius: 6px;
+            font-size: 0.86rem;
+            color: #fff;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .article-date {
+            min-width: 100px;
+            border-radius: 10px;
+            padding: 0.6rem 1rem;
+            text-align: center;
+            font-weight: 700;
+            font-size: 3.0rem;
+            color: #000000cc;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .article-date::after {
+            content: "";
+            position: absolute;
+            right: -10px;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 100px;
+            /* 或 100% 取决于你想要的视觉效果 */
+            width: 2px;
+            background-color: #d6d9db96;
+        }
+
+        .article-date span {
+            font-size: 1.3rem;
+            color: #7f8c8d;
+            margin-top: 0.2rem;
+        }
+
+        .article-text {
+            flex: 1;
+        }
+
+        .article-text h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #9738bd;
+            margin-bottom: 0.6rem;
+        }
+
+        .article-text p {
+            font-size: 1.05rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .article-text2 {
+            flex: 1;
+        }
+
+        .article-text2 h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #e67e22;
+            margin-bottom: 0.6rem;
+        }
+
+        .article-text2 p {
+            font-size: 1.05rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .arrow-box {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .arrow-box.orange {
+            background-color: #e67e22;
+            color: #fff;
+        }
+
+        .arrow-box.orange:hover {
+            background-color: #d35400;
+        }
+
+        .arrow-box.white {
+            background-color: #ffffff;
+            border: 2px solid #e67e22;
+            color: #e67e22;
+        }
+
+        .arrow-box.white:hover {
+            background-color: #fdf2e9;
+        }
+
+        @media (max-width: 768px) {
+            .article-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 1.5rem;
+            }
+
+            .article-img-box {
+                width: 100%;
+                height: 180px;
+            }
+
+            .article-text h3 {
+                font-size: 1.25rem;
+            }
+
+            .article-text p {
+                font-size: 1rem;
+            }
+
+            .article-date::after {
+                display: none;
+            }
+
+            .overlay-text {
+                font-size: 0.78rem;
+            }
+
+            .overlay-text2 {
+                font-size: 0.78rem;
+
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Bahagian Header -->
+    <header id="header">
+        <nav class="container">
+            <div class="logo">
+                <a href="#home">
+                    <img src="./assets/images/fx-logo.png" alt="Logo FX8" />
+                </a>
+            </div>
+            <div class="nav-right">
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="./index-MY.html#home">Utama</a></li>
+                    <li><a href="./index-MY.html#about">Tentang</a></li>
+                    <li><a href="./index-MY.html#vision">Cara Menjana Pendapatan</a></li>
+                    <li><a href="./product-MY.html">Produk</a></li>
+                    <li><a href="#contact">Hubungi</a></li>
+                    <li><a href="./qualifi-MY.html">Kelayakan</a></li>
+                    <li><a href="./news-MY.html">Berita</a></li>
+                    <li class="language-dropdown">
+                        <button class="dropdown-btn" id="languageBtn">
+                            <i class="fas fa-globe"></i> Bahasa
+                        </button>
+                        <div class="dropdown-content" id="languageDropdown">
+                            <a href="index-EN.html" onclick="changeLanguage('English')">English</a>
+                            <a href="index-MY.html" onclick="changeLanguage('Bahasa Malaysia')">Bahasa Malaysia</a>
+                            <a href="index-CN.html" onclick="changeLanguage('中文')">中文（简体）</a>
+                            <a href="index-TW.html" onclick="changeLanguage('中文')">中文（繁体）</a>
+                            <a href="index-JP.html" onclick="changeLanguage('日语')">Bahasa Jepun</a>
+                            <a href="index-KR.html" onclick="changeLanguage('韩语')">Bahasa Korea</a>
+                        </div>
+                    </li>
+                </ul>
+                 <a id="download-btn" href="https://www.baidu.com/" target="_blank" rel="noopener noreferrer"
+                    class="download-btn fade-element">
+                    Download FX8 APP
+                </a>
+            </div>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Senarai Artikel -->
+    <div class="article-list">
+        <div class="article-content">
+            <div class="article-img-box">
+                <img src="./assets/images/forex-i.jpg" alt="info1" />
+                <div class="overlay-text">Permohonan Lesen Forex: Pandangan Terkini & Strategi Praktikal</div>
+            </div>
+            <div class="article-date">
+                03<br /><span>2024-07</span>
+            </div>
+            <div class="article-text">
+                <h3>Pengasas Syarikat Forex Berkongsi: Trend Terkini & Pengalaman Sebenar Dalam Permohonan Lesen</h3>
+                <p>Subtajuk 1: Apa itu Permohonan Lesen Forex? Ia merujuk kepada proses memohon kelulusan rasmi daripada
+                    badan berkuasa untuk menjalankan aktiviti perdagangan mata wang asing...</p>
+            </div>
+            <a href="news-info-MY.html" class="arrow-link">
+                <div class="arrow-box orange">→</div>
+            </a>
+        </div>
+
+        <div class="article-content">
+            <div class="article-img-box">
+                <img src="./assets/images/forex-i2.jpg" alt="info2" />
+                <div class="overlay-text2">Risiko Undang-undang Dalam Permohonan Lesen Forex</div>
+            </div>
+            <div class="article-date">
+                03<br /><span>2024-07</span>
+            </div>
+            <div class="article-text2">
+                <h3>Analisis Lengkap Risiko Undang-undang Yang Perlu Diambil Kira Semasa Memohon Lesen Forex</h3>
+                <p>Dengan pertumbuhan ekonomi global dan perdagangan antarabangsa, pasaran forex menjadi semakin
+                    penting. Namun, terdapat pelbagai risiko undang-undang dalam proses permohonan yang perlu difahami
+                    dengan jelas...</p>
+            </div>
+            <a href="news-info-MY.html" class="arrow-link">
+                <div class="arrow-box white">→</div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-container">
+        <div class="footer-top fade-element">
+            <div class="footer-logo fade-element">
+                <img src="./assets/images/fx-logo.png" alt="Logo FX8">
+            </div>
+            <div class="footer-socials">
+                <!-- Baris 1: Telegram dan WhatsApp -->
+                <h3 class="footer-contact">Hubungi Kami</h3>
+                <div class="footer-social-row">
+                    <a href="#" class="footer-social-link">
+                        <img src="./assets/images/telegram.png" alt="Telegram">
+                        Telegram
+                    </a>
+                    <a href="#" class="footer-social-link">
+                        <img src="./assets/images/whatsapp.png" alt="WhatsApp">
+                        WhatsApp
+                    </a>
+                </div>
+
+                <!-- Baris 2: Ikon media sosial tambahan -->
+                <div class="footer-social-row" id="contact">
+                    <a href="#" class="footer-social-link">
+                        <img src="./assets/images/facebook.png" alt="Facebook" class="social-icon">
+                    </a>
+                    <a href="#" class="footer-social-link">
+                        <img src="./assets/images/instagram.png" alt="Instagram" class="social-icon">
+                    </a>
+                    <a href="#" class="footer-social-link">
+                        <img src="./assets/images/linkedin.png" alt="LinkedIn" class="social-icon">
+                    </a>
+                    <a href="#" class="footer-social-link">
+                        <img src="./assets/images/ytb.png" alt="YouTube" class="social-icon">
+                    </a>
+                    <a href="#" class="footer-social-link">
+                        <img src="./assets/images/wechat.png" alt="WeChat" class="social-icon">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <hr class="footer-divider">
+
+        <div class="footer-text">
+            FX8 Bursa Aset Digital — Mendefinisikan semula ekosistem perdagangan aset digital.
+            FX8, yang berteraskan MetaQuotes dan dipacu oleh inovasi, berkomitmen untuk membina platform aset digital
+            global yang menyokong kerjasama pelbagai pihak.
+            Melalui tiga sistem unik kami — Pembahagian Keuntungan Simulasi A-Book, Pembahagian Keuntungan Kontrak
+            B-Book, dan Pembahagian Keuntungan Salin Dagangan — kami bukan sahaja menyediakan perkhidmatan dagangan,
+            tetapi juga membentuk ekosistem kewangan yang terbuka, telus, dan mampan.
+            Semua peserta — pedagang, pembangun strategi, pemimpin komuniti, dan rakan kongsi — dapat berkongsi manfaat
+            daripada pertumbuhan ekonomi digital.
+            Didorong oleh teknologi dan diperkukuh melalui pembahagian keuntungan, FX8 bukan sekadar platform dagangan,
+            tetapi juga infrastruktur utama bagi ekosistem aset digital, memacu industri ke arah era yang lebih cekap,
+            adil dan dinamik.
+            <br><br>
+            © 2025 FX8.com. Hak cipta terpelihara.
+        </div>
+
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="./assets/js/index.js"></script>
+</body>
+
+</html>
